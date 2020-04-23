@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace UnityJunks.Tests
+namespace UnityJunks.Tests.Csharp
 {
     public class JunkTest
     {
