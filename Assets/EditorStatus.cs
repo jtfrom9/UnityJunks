@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [InitializeOnLoad]
 public static class PlaymodeStateObserver
 {
@@ -13,6 +14,7 @@ public static class PlaymodeStateObserver
         };
     }
 }
+#endif
 
 public class EditorStatus: MonoBehaviour
 {
