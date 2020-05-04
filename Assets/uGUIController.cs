@@ -43,15 +43,12 @@ public class uGUIController : MonoBehaviour
         dropdown.OnValueChangedAsObservable()
             .Select(index => dropdown.options[index].text)
             .SubscribeToText(dropdownText);
+        input
+            // .OnValueChangedAsObservable()
+            .OnEndEditAsObservable()
+            .SubscribeToText(inputText);
 
-        if (!TouchScreenKeyboard.isSupported)
-        {
-            input.gameObject.SetActive(true);
-            input
-                .OnValueChangedAsObservable()
-                .SubscribeToText(inputText);
-        }
-        else
+        if (TouchScreenKeyboard.isSupported)
         {
             keyboradButton.OnClickAsObservable().Subscribe(async _ =>
             {
@@ -70,6 +67,10 @@ public class uGUIController : MonoBehaviour
 
                 kb = null;
             });
+        }
+        else
+        {
+            Debug.Log("TouchScreenKeyboard not supported");
         }
     }
 
