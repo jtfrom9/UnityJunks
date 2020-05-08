@@ -40,7 +40,8 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "com.pixelplacement.itween": "1.0.0"
   },
   "lock": {
     "com.cysharp.unitask": {
@@ -51,5 +52,15 @@
       "revision": "HEAD",
       "hash": "284d5c50d3f1ddd9fa7df3d382ea904732a9c2ff"
     }
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.openupm",
+        "com.pixelplacement.itween"
+      ]
+    }
+  ]
 }
