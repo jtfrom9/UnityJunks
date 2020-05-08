@@ -26,6 +26,7 @@ public class Slidein : MonoBehaviour
         rtrans.anchoredPosition += new Vector2(2000, 0);
 
         bool slideOut = true;
+#if false // manual togle flag
         buttonITween.OnClickAsObservable().Subscribe(_ =>
         {
             iTween.MoveTo(panelITween, iTween.Hash(
@@ -34,5 +35,19 @@ public class Slidein : MonoBehaviour
             ));
             slideOut = !slideOut;
         });
+#endif
+        // togle flag in UniRx Select operator
+        buttonITween.OnClickAsObservable()
+            .Select(_ =>
+            {
+                slideOut = !slideOut;
+                return slideOut;
+            }).Subscribe(outf =>
+            {
+                iTween.MoveTo(panelITween, iTween.Hash(
+                    "x", (outf) ? 2000f : 0f,
+                    "islocal", true
+                ));
+            });
     }
 }
