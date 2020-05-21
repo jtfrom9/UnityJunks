@@ -47,7 +47,7 @@ public class FactoryTest : MonoBehaviour
         Debug.Log(spawner.Spawn(0).GetType());
         Debug.Log(spawner.Spawn("hoge").GetType());
 
-        var cv = cubeViewFactory.Create();
+        var cv = cubeViewFactory.Create("test cube");
         cv.SetColor(Color.red);
     }
 
