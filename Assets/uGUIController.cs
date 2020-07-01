@@ -16,6 +16,9 @@ public class uGUIController : MonoBehaviour
     public Dropdown dropdown;
     public Text dropdownText;
 
+    public Slider slider;
+    public Text sliderValueText;
+
     public Button keyboradButton;
     public Text inputText;
     public InputField input;
@@ -38,6 +41,10 @@ public class uGUIController : MonoBehaviour
         checkToggle
             .OnValueChangedAsObservable()
             .Subscribe(b => checkText.gameObject.SetActive(b));
+
+        slider
+            .OnValueChangedAsObservable()
+            .SubscribeToText(sliderValueText);
 
         dropdown.options.Add(new Dropdown.OptionData("hoge"));
         dropdown.OnValueChangedAsObservable()
