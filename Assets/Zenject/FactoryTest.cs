@@ -29,15 +29,16 @@ public class FactoryTest : MonoBehaviour
 {
     Enemy1.Factory _enemy1Factory;
     EnemySpawner spawner;
+    EnemyFactory enemyFactory;
     ICubeViewFactory cubeViewFactory;
 
     [Inject]
-    public void Construct(Enemy1.Factory e1, EnemySpawner spawner, ICubeViewFactory cubeViewFactory)
+    public void Construct(Enemy1.Factory e1, EnemySpawner spawner, EnemyFactory efactory, ICubeViewFactory cubeViewFactory)
     {
         this._enemy1Factory = e1;
         this.spawner = spawner;
+        this.enemyFactory = efactory;
         this.cubeViewFactory = cubeViewFactory;
-        Debug.Log($"FactoryTest.Construct: {spawner}");
     }
 
     void Awake()
@@ -46,6 +47,9 @@ public class FactoryTest : MonoBehaviour
 
         Debug.Log(spawner.Spawn(0).GetType());
         Debug.Log(spawner.Spawn("hoge").GetType());
+
+        Debug.Log("--- create from EnemyFactoryImpl");
+        Debug.Log(enemyFactory.Create(1).GetType());
 
         var cv = cubeViewFactory.Create("test cube");
         cv.SetColor(Color.red);

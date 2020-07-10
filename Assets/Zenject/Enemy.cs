@@ -57,9 +57,9 @@ public class Enemy2 : IEnemy
     public class Factory : PlaceholderFactory<string, Enemy2> { }
 }
 
-public class EnemyFactory : PlaceholderFactory<IEnemy> { }
+public class EnemyFactory : PlaceholderFactory<int, IEnemy> { }
 
-public class EnemyFactoryImpl: IFactory<IEnemy>
+public class EnemyFactoryImpl: IFactory<int, IEnemy>
 {
     Enemy1.Factory f1;
     Enemy2.Factory f2;
@@ -69,8 +69,11 @@ public class EnemyFactoryImpl: IFactory<IEnemy>
         this.f1 = f1;
         this.f2 = f2;
     }
-    public IEnemy Create()
+    public IEnemy Create(int type)
     {
-        return f1.Create(0);
+        if(type==0)
+            return f1.Create(0);
+        else
+            return f2.Create("hoge");
     }
 }
