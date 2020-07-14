@@ -34,5 +34,29 @@ public class ZenjectTestContext : MonoInstaller<ZenjectTestContext>
             .AsSingle()
             .WithArguments(ZenjectTest2.Type.A)
             .NonLazy();
+
+        Container.Bind<IInitializable>()
+        // Container.BindInterfacesAndSelfTo<C>()
+        // Container.Bind(typeof(IInitializable),typeof(C))
+            .To<C>()
+            .AsCached()
+            .NonLazy();
+
+        Container.Bind<ITickable>()
+            .To<C>()
+            .AsCached()
+            .NonLazy();
+
+        Container.BindInterfacesTo<D>()
+            .AsSingle()
+            .NonLazy();
+
+        // Container.Bind<E>().To<E>().AsSingle().NonLazy();
+
+        Container.Bind<E1>().To<E1>().AsSingle().NonLazy();
+        Container.Bind<E1>().To<E2>().AsSingle().NonLazy();
+        // error. E3 has [Inject] for E1 and IInitializable.
+        // These are Binded doubly above
+        // Container.Bind<E3>().To<E3>().AsSingle().NonLazy();
     }
 }

@@ -34,6 +34,46 @@ public class B : IFoo, IBar
     }
 }
 
+public class C: IInitializable, ITickable
+{
+    public void Initialize()
+    {
+        Debug.Log($"C.Initialize {GetHashCode()}");
+    }
+    public void Tick()
+    {
+        Debug.Log($"C.Tick {GetHashCode()}");
+    }
+}
+
+public class D: IInitializable, ITickable
+{
+    public void Initialize()
+    {
+        Debug.Log($"D.Initialize {GetHashCode()}");
+    }
+    public void Tick()
+    {
+        Debug.Log($"D.Tick {GetHashCode()}");
+    }
+}
+
+public class E1
+{
+}
+public class E2: E1
+{}
+public class E3
+{
+    [Inject] E1 e1;
+    [Inject] IInitializable initializable;
+}
+
+public class E
+{
+    [Inject] IInitializable initializable;
+}
+
 public class ZenjectTest : MonoBehaviour
 {
     IFoo foo;
