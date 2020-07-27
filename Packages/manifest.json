@@ -3,6 +3,8 @@
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=Assets/UniRx.Async",
     "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.pixelplacement.itween": "1.0.0",
+    "com.svermeulen.extenject": "9.1.0-1.metaFileFix",
+    "com.svermeulen.extenject.testframework.modified": "https://github.com/jtfrom9/ExtenjectTestFrameworkFix.git?path=Assets/TestFramework",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.0",
@@ -12,7 +14,6 @@
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.14",
     "com.unity.ugui": "1.0.0",
-    "zenject": "8.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -53,6 +54,10 @@
     "com.neuecc.unirx": {
       "revision": "HEAD",
       "hash": "284d5c50d3f1ddd9fa7df3d382ea904732a9c2ff"
+    },
+    "com.svermeulen.extenject.testframework.modified": {
+      "revision": "HEAD",
+      "hash": "a1046cbf72f4eaa5f9680d2b8df12c8be4456a53"
     }
   },
   "scopedRegistries": [
@@ -62,7 +67,7 @@
       "scopes": [
         "com.openupm",
         "com.pixelplacement.itween",
-        "zenject"
+        "com.svermeulen.extenject"
       ]
     }
   ]
