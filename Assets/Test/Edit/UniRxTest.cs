@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UniRx;
+using UniRx.Diagnostics;
 
 namespace UnityJunks.Tests.UniRx
 {
@@ -77,6 +79,19 @@ namespace UnityJunks.Tests.UniRx
                 {
                     Debug.Log($"{v.index}, {v.flag}");
                 });
+        }
+
+        [Test]
+        public void MergeTest()
+        {
+            Observable.Interval(TimeSpan.FromMilliseconds(250)).Debug("Interval")
+                .Take(3).Debug("Take")
+                .Subscribe(x => { Debug.Log(x); });
+
+            Observable.Timer(TimeSpan.FromSeconds(1)).Subscribe(x =>
+            {
+                Debug.Log(x);
+            });
         }
     }
 }
