@@ -1,0 +1,15 @@
+{
+    "name": "B",
+    "references": [
+        "GUID:8b73e8c0461154ecda2a2ae0edd2ea59"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
