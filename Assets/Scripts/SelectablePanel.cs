@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Selectable))]
+[RequireComponent(typeof(EventTrigger))]
 public class SelectablePanel : MonoBehaviour
 {
     [SerializeField] Toggle toggle;
@@ -13,7 +15,7 @@ public class SelectablePanel : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        scrollRectController = FindObjectOfType<ScrollRectController>();
+        scrollRectController = gameObject.GetComponentInParent<ScrollRectController>();
     }
 
     public void Submit()
@@ -27,7 +29,13 @@ public class SelectablePanel : MonoBehaviour
     public void Select()
     {
         Debug.Log($"{name} {rectTransform.rect}");
-        scrollRectController.Select(rectTransform);
+        if (scrollRectController)
+        {
+            Debug.Log($"parent is {scrollRectController.name}");
+            scrollRectController.Select(rectTransform);
+        } else {
+            Debug.LogError("not scroll rect controller");
+        }
     }
 }
 
