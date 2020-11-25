@@ -24,6 +24,8 @@ MonoBehaviour:
     m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.cysharp.unitask
+    - com.neuecc.unirx
     - com.openupm
     - com.pixelplacement.itween
     - com.svermeulen.extenject
@@ -37,6 +39,8 @@ MonoBehaviour:
       m_Name: package.openupm.com
       m_Url: https://package.openupm.com
       m_Scopes:
+      - com.cysharp.unitask
+      - com.neuecc.unirx
       - com.openupm
       - com.pixelplacement.itween
       - com.svermeulen.extenject
@@ -45,6 +49,8 @@ MonoBehaviour:
     m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.cysharp.unitask
+    - com.neuecc.unirx
     - com.openupm
     - com.pixelplacement.itween
     - com.svermeulen.extenject

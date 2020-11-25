@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=Assets/UniRx.Async",
-    "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
     "com.pixelplacement.itween": "1.0.0",
     "com.svermeulen.extenject": "9.1.0-1.metaFileFix",
     "com.svermeulen.extenject.testframework.modified": "https://github.com/jtfrom9/ExtenjectTestFrameworkFix.git?path=Assets/TestFramework",
@@ -44,13 +42,17 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "com.neuecc.unirx": "7.1.0",
+    "com.cysharp.unitask": "2.0.37"
   },
   "scopedRegistries": [
     {
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.cysharp.unitask",
+        "com.neuecc.unirx",
         "com.openupm",
         "com.pixelplacement.itween",
         "com.svermeulen.extenject"

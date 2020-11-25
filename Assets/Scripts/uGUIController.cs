@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
-using UniRx.Async;
+using Cysharp.Threading.Tasks;
 
 public class uGUIController : MonoBehaviour
 {
